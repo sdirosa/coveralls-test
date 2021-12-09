@@ -1,0 +1,29 @@
+name: "Tracker tests"
+
+on: ["push", "pull_request"]
+
+jobs:
+
+	run-tests-and-publish-coverage:
+    name: Run tests and publish coverage
+    runs-on: ubuntu-latest
+    steps:
+      
+    - uses: actions/checkout@v2
+      
+    - name: Use Node 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+        check-latest: true
+      
+    - name: Install dependencies
+      run: yarn install
+      
+    - name: Run tests with coverage
+      run: yarn test --coverage .
+
+		- name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
