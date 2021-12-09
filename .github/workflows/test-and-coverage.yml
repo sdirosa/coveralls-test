@@ -3,7 +3,7 @@ name: "Tests + Coverage"
 on: ["push", "pull_request"]
 
 jobs:
-	run-tests-and-publish-coverage:
+  run-tests-and-publish-coverage:
     name: Run tests and publish coverage
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +17,7 @@ jobs:
         run: yarn install
       - name: Run tests with coverage
         run: yarn test --coverage .
-		  - name: Coveralls
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
