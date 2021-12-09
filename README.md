@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+[![Coverage Status](https://coveralls.io/repos/github/sdirosa/coveralls-test/badge.svg?branch=main)](https://coveralls.io/github/sdirosa/coveralls-test?branch=main)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
